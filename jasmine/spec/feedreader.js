@@ -67,9 +67,7 @@ $(function() {
         //before loadFeed runs, stores old entry
         beforeEach(function(done) {
             oldFeed = $('.feed').html();
-            loadFeed(1, function() {
-                done();
-            });
+            loadFeed(1, done);
         });
 
         //tests that content changes when feed is loaded
