@@ -4,20 +4,20 @@ $(function() {
     //test that all our RSS Feeds, URLs, and names are defined
     describe('RSS Feeds', function() {
 
-        //checks that RSS feeds are defined
+        //tests that all RSS feeds are defined
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
-        //checks that URLs are defined
+        //tests that all URLs are defined
         it('URL is defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
             });
         });
 
-        //checks are names are defined
+        //tests that all names are defined
         it('Name is defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
@@ -28,12 +28,12 @@ $(function() {
     //tests that menu is hidden by default and toggles when clicked
     describe('The menu', function() {
 
-        //ensures the menu is hidden by default
+        //tests that the menu is hidden by default
         it('is hidden by default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
-        //menu toggles when clicked
+        //tests that the menu toggles when clicked
         it('menu toggles when clicked', function() {
 
             //shows menu when clicked
@@ -48,7 +48,7 @@ $(function() {
 
     });
 
-    //Tests that when loadFeed function is called and completes it work, there is an .entry element within the .feed container
+    //tests that when loadFeed function is called and completes it work, there is an .entry element within the .feed container
     describe('Initial Entries', function() {
 
         beforeEach(function(done) {
@@ -72,7 +72,7 @@ $(function() {
             });
         });
 
-        //checks that content changes when feed is loaded
+        //tests that content changes when feed is loaded
         it('content changes when feed is loaded', function(done) {
             loadFeed(0, function() {
                 expect($('.feed').html()).not.toBe(oldFeed);
